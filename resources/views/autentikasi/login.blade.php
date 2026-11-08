@@ -142,17 +142,7 @@
                     <span>PosyanduCare</span>
                 </div>
 
-                <div class="informasi-bawah">
-                    <p>
-                        Sistem Informasi Pelayanan Posyandu
-                    </p>
-
-                    <span>
-                        © {{ date('Y') }} PosyanduCare. Hak cipta dilindungi.
-                    </span>
-                </div>
-
-            </div>
+                
 
         </section>
 
