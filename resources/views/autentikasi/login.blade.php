@@ -103,17 +103,24 @@
                     </div>
 
                     <div class="form-grup">
-                        <div class="label-password">
-                            <label for="password">Kata Sandi</label>
-                        </div>
+                        <label for="password">Kata Sandi</label>
 
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            placeholder="Masukkan kata sandi"
-                            autocomplete="current-password"
-                            required>
+                        <div class="bungkus-kata-sandi">
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Masukkan kata sandi"
+                                autocomplete="current-password"
+                                required>
+
+                            <button
+                                type="button"
+                                id="lihat-sandi"
+                                class="tombol-lihat-sandi">
+                                Lihat
+                            </button>
+                        </div>
                     </div>
 
                     <div class="pilihan-form">
