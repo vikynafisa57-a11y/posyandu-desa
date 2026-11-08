@@ -9,16 +9,23 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        //
-    }
+   public function up(): void
+{
+    Schema::create('imunisasis', function (Blueprint $table) {
+        $table->id();
+        $table->foreignId('balita_id')->constrained('balitas')->cascadeOnDelete();
+        $table->foreignId('kader_id')->constrained('users')->restrictOnDelete();
+        $table->string('nama_imunisasi');
+        $table->date('tanggal_pemberian');
+        $table->string('dosis')->nullable();
+        $table->text('catatan')->nullable();
+        $table->timestamps();
+    });
+}
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        //
-    }
+public function down(): void
+{
+    Schema::dropIfExists('imunisasis');
+}
+
 };
