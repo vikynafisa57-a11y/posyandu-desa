@@ -11,14 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('tindak_lanjuts', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('balita_id')->constrained('balitas')->cascadeOnDelete();
+            $table->foreignId('kader_id')->constrained('users')->restrictOnDelete();
+            $table->date('tanggal_tindak_lanjut');
+            $table->string('jenis_tindak_lanjut');
+            $table->text('catatan');
+            $table->string('status')->default('belum_selesai');
+            $table->timestamps();
+        });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('tindak_lanjuts');
     }
 };
