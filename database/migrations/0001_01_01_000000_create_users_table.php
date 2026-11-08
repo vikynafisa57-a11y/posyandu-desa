@@ -17,6 +17,11 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('peran')->default('orang_tua');
+            $table->foreignId('posyandu_id')
+                ->nullable()
+                ->constrained('posyandus')
+                ->nullOnDelete();
             $table->rememberToken();
             $table->timestamps();
         });
